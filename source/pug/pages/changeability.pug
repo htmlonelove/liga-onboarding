@@ -1,0 +1,142 @@
+extends ../components/base/layout
+
+block variables
+  - const title = "ProjectName" //- на страницах кроме главной используйте О нас — ProjectName
+  - const currentUrl = "changeability.html" //- для остальных страниц пишем пустую строку или индекс активного headerLinks
+
+block main
+  header.header-test
+    .container
+      .header-test__wrapper
+        span.header-test__logo
+          +icon("img/sprite_auto.svg#liga-logo", 192, 24)
+        .header-test__contacts.header-contacts
+          a.header-contacts__link(href="mailto:mail@mail.com") Почта: testmail1122@mail.com
+          a.header-contacts__link(href="#") Адрес: г. Москва, Красная площадь
+          a.header-contacts__link(href="tel:88008008000") Телефон: 8(800)800-80-00
+        .header-test__dropdown.dropdown.dropdown--left.dropdown--broken(tabindex="0")
+          span.dropdown__button Меню
+          ul.dropdown__list
+            li.dropdown__item
+              a.dropdown__link(href="index.html") Главная страница
+            li.dropdown__item
+              a.dropdown__link(href="sitemap.html") Разводящая страница
+            li.dropdown__item
+              a.dropdown__link(href="ui-kit.html") UI-kit
+            li.dropdown__item
+              a.dropdown__link(href="index.html") Главная страница
+            li.dropdown__item
+              a.dropdown__link(href="sitemap.html") Разводящая страница
+            li.dropdown__item
+              a.dropdown__link(href="ui-kit.html") UI-kit
+            li.dropdown__item
+              a.dropdown__link(href="index.html") Главная страница
+            li.dropdown__item
+              a.dropdown__link(href="sitemap.html") Разводящая страница
+            li.dropdown__item
+              a.dropdown__link(href="ui-kit.html") UI-kit
+            li.dropdown__item
+              a.dropdown__link(href="index.html") Главная страница
+            li.dropdown__item
+              a.dropdown__link(href="sitemap.html") Разводящая страница
+            li.dropdown__item
+              a.dropdown__link(href="ui-kit.html") UI-kit
+            li.dropdown__item
+              a.dropdown__link(href="index.html") Главная страница
+            li.dropdown__item
+              a.dropdown__link(href="sitemap.html") Разводящая страница
+            li.dropdown__item
+              a.dropdown__link(href="ui-kit.html") UI-kit
+            li.dropdown__item
+              a.dropdown__link(href="index.html") Главная страница
+            li.dropdown__item
+              a.dropdown__link(href="sitemap.html") Разводящая страница
+            li.dropdown__item
+              a.dropdown__link(href="ui-kit.html") UI-kit
+            li.dropdown__item
+              a.dropdown__link(href="index.html") Главная страница
+            li.dropdown__item
+              a.dropdown__link(href="sitemap.html") Разводящая страница
+            li.dropdown__item
+              a.dropdown__link(href="ui-kit.html") UI-kit
+            li.dropdown__item
+              a.dropdown__link(href="index.html") Главная страница
+            li.dropdown__item
+              a.dropdown__link(href="sitemap.html") Разводящая страница
+            li.dropdown__item
+              a.dropdown__link(href="ui-kit.html") UI-kit
+  main
+    section.section
+      .container
+        h2.section__title Хлебные крошки
+        .breadcrumbs
+          ul.breadcrumbs__list
+            li.breadcrumbs__item
+              a.breadcrumbs__link(href="#") Главная
+            li.breadcrumbs__item
+              a.breadcrumbs__link(href="#") Новости
+            li.breadcrumbs__item
+              span.breadcrumbs__link.breadcrumbs__link--current Новость
+    section.section
+      .container
+        h2.section__title Текстовый блок
+        .text-block
+          h3.text-block__title Добро пожаловать в онбординг
+          p.text-block__text Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat, eum quisquam expedita sed iusto, repellat aliquam, assumenda cumque eligendi tempore totam mollitia suscipit aliquid nulla ve lit! Eaque repellendus ad odit.
+        .text-block.text-block--chess
+          h3.text-block__title Добро пожаловать в онбординг
+          p.text-block__text Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat, eum quisquam expedita sed iusto, repellat aliquam, assumenda cumque eligendi tempore totam mollitia suscipit aliquid nulla ve lit! Eaque repellendus ad odit.
+          p.text-block__text Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat, eum quisquam expedita sed iusto, repellat aliquam, assumenda cumque eligendi tempore totam mollitia suscipit aliquid nulla ve lit! Eaque repellendus ad odit.
+          p.text-block__text Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat, eum quisquam expedita sed iusto, repellat aliquam, assumenda cumque eligendi tempore totam mollitia suscipit aliquid nulla ve lit! Eaque repellendus ad odit.
+    section.section
+      .container
+        h2.section__title Карточки товаров
+        section.cards
+          ul.cards__list
+            li.cards__item
+              +card()
+            li.cards__item
+              +card()
+            li.cards__item
+              +card()
+
+        h2.section__title Пагинация
+        .pagination
+          .pagination__control-block
+            a.pagination__control(href="#", aria-label="Переход назад") Назад
+          ul.pagination__list
+            li.pagination__item
+              span.pagination__link.pagination__link--current 1
+            li.pagination__item
+              a.pagination__link(href="#", aria-label="Переход на страницу 2") 2
+            li.pagination__item
+              a.pagination__link(href="#", aria-label="Переход на страницу 3") 3
+            li.pagination__item
+              a.pagination__link(href="#", aria-label="Переход на страницу 4") 4
+            li.pagination__item
+              a.pagination__link(href="#", aria-label="Переход на страницу 5") 5
+          .pagination__control-block
+            a.pagination__control(href="#", aria-label="Переход вперёд") Вперёд
+  footer.footer-test
+    .container
+      .footer-test__wrapper
+        .footer-test__socials.socials
+          ul.socials__list
+            li.socials__item
+              a.socials__link(href="#", aria-label="Мы вконтакте")
+                +icon("img/sprite_auto.svg#icon-vk", 21, 21)
+            li.socials__item
+              a.socials__link(href="#", aria-label="Мы вконтакте")
+                +icon("img/sprite_auto.svg#icon-vk", 21, 21)
+            li.socials__item
+              a.socials__link(href="#", aria-label="Мы вконтакте")
+                +icon("img/sprite_auto.svg#icon-vk", 21, 21)
+        ul.footer-test__link-list
+          li.footer-test__link-item
+            a.footer-test__link(href="#") Пункт 1
+          li.footer-test__link-item
+            a.footer-test__link(href="#") Пункт 2
+          li.footer-test__link-item
+            a.footer-test__link(href="#") Пункт 3
+        .footer-test__logo
+          +icon("img/sprite_auto.svg#liga-logo", 192, 24)

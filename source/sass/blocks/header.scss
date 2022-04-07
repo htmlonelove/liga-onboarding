@@ -1,13 +1,28 @@
 .header {
   padding: 28px 0;
 
-  background-color: $color-neon-blue;
-
-  .container {
+  &__wrapper {
     display: flex;
+    align-items: center;
   }
 
   &__logo {
-    color: $color-default-white;
+    margin-right: auto;
+    display: flex;
+    color: $color-default-black;
+  }
+
+  &__mail-link {
+    display: flex;
+    align-items: center;
+    padding: 5px 10px;
+    box-shadow: 0 0 2px 1px $color-neon-blue;
+    border-radius: 5px;
+    max-width: 200px;
+  }
+
+  &__mail-icon {
+    margin-left: 20px;
+    display: flex;
   }
 }

@@ -43,17 +43,17 @@ block main
     }
 
     .container > section {
-      padding: 70px 0 0 0;
+      padding: 80px 0 0 0;
     }
 
-    section > h2 {
+    .ui-tile {
       margin: 0 0 20px 0;
       padding: 20px 0;
       position: relative;
       color: #ffffff;
     }
 
-    section > h2::before {
+    .ui-tile::before {
       content: "";
       position: absolute;
       height: 100%;
@@ -69,82 +69,211 @@ block main
       background-color: #2c39f2;
       padding: 20px 0;
       position: fixed;
-      width: 100vw;
+      width: 100%;
       z-index: 99;
       box-shadow: 0 0 3px 1px #000000;
     }
 
     .header-ui__nav {
       display: grid;
+      align-items: center;
       grid-template-columns: max-content 1fr;
       gap: 20px 80px;
     }
 
-    .header-ui__inner-list {
-      margin: 0;
-      padding: 0;
-      list-style: none;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px 30px;
+    .dropdown-nav {
+      margin-left: auto;
     }
 
-    .header-ui__inner-link {
-      color: #ffffff;
-      transition: color 0.3s ease;
-    }
-
-    .header-ui__inner-link:hover,
-    .header-ui__inner-link.is-active {
-      color: #ff1553;
-    }
-
-    .header-ui__inner-link.is-inactive {
-      color: #ffffff;
-      pointer-events: none;
-    }
-
-  header.header-ui
+  header.header-ui(data-fix-block)
     nav.header-ui__nav.container
       a.components-backwards(href="sitemap.html")
         span &larr;
         span вернуться на разводящую
-      ul.header-ui__inner-list
-        li.header-ui__inner-item
-          a.header-ui__inner-link(href="#modals", data-navigation-link) Modals
-        li.header-ui__inner-item
-          a.header-ui__inner-link(href="#buttons", data-navigation-link) Buttons
-        li.header-ui__inner-item
-          a.header-ui__inner-link(href="#form-elements", data-navigation-link) Form elements
+      div.dropdown-nav(data-dropdown-nav, data-hash, tabindex="0")
+        span.dropdown-nav__button(data-dropdown-button)
+        ul.dropdown-nav__list(data-dropdown-list)
+          li.dropdown-nav__item
+            a.dropdown-nav__link(href="#typography", data-dropdown-link) Typography
+          li.dropdown-nav__item
+            a.dropdown-nav__link(href="#buttons", data-dropdown-link) Buttons
+          li.dropdown-nav__item
+            a.dropdown-nav__link(href="#socials", data-dropdown-link) Socials
+          li.dropdown-nav__item
+            a.dropdown-nav__link(href="#pagination", data-dropdown-link) Pagination
+          li.dropdown-nav__item
+            a.dropdown-nav__link(href="#breadcrumbs", data-dropdown-link) Breadcrumbs
+          li.dropdown-nav__item
+            a.dropdown-nav__link(href="#lists", data-dropdown-link) Lists
+          li.dropdown-nav__item
+            a.dropdown-nav__link(href="#dropdown", data-dropdown-link) Dropdown
+          li.dropdown-nav__item
+            a.dropdown-nav__link(href="#cards", data-dropdown-link) Cards
+          li.dropdown-nav__item
+            a.dropdown-nav__link(href="#cards-hover", data-dropdown-link) Cards hover
+          li.dropdown-nav__item
+            a.dropdown-nav__link(href="#form-elements", data-dropdown-link) Form elements
+          li.dropdown-nav__item
+            a.dropdown-nav__link(href="#modals", data-dropdown-link) Modals
 
   main
     .container
       h1 UI-kit
       //- все модалки проекта добавляем сюда, для удобства тестирования
-      section(id="modals")
-        h2 Modals
-        p
-          +btn({text: "modal-feedback"})(data-open-modal="feedback")
-        p
-          +btn({text: "modal-success"})(data-open-modal="success")
+      section(id="typography")
+        h2.ui-tile Typography
+        p Если на сайте повторяются стили у заголовков то рекомендуется создать для них отдельный класс:
+        p title - это БЭМ блок, который используется для создания заголовков, в стилях у него прописывается все свойства, включая font-size, line-height и color, которые принеобходимости меняются модификаторами.
+        h2.title Пример заголовка
+        p title--h3 и так далее - это модификатор который меняет размер шрифта.
+        h2.title.title--h3 Пример заголовка
+        h2.title.title--h4 Пример заголовка
+        p title--red и так далее - это модификатор который меняет цвет текста.
+        h2.title.title--red Пример заголовка
+        h2.title.title--blue Пример заголовка
 
       section(id="buttons")
-        h2 Buttons
-        +btn({text: "Текст", href: "#"})
+        h2.ui-tile Buttons
+        p button - это БЭМ блок, который используется для создания кнопок и ссылок, в стилях у него прописывается все свойства.
+        p
+          +btn({text: "Текст", href: "#"})
         p Пример вызова
         code
           pre +btn({text: "Текст", href: "#"})
-        +btn({text: "Текст", href: "#", isExternal: true})(aria-label="Просто ссылка").btn--red
+        p button--small и так далее - это модификатор который меняет размер шрифта и отступы в кнопке.
+        p
+          +btn({text: "Текст", href: "#", isExternal: true})(aria-label="Просто ссылка").button--small
+        p
+          +btn({text: "Текст", href: "#", isExternal: true})(aria-label="Просто ссылка").button--big
+        p button--red и так далее - это модификатор который меняет цвет фона.
+        p
+          +btn({text: "Текст", href: "#", isExternal: true})(aria-label="Просто ссылка").button--red
         p Пример вызова
         code
-          pre +btn({text: "Я красная ссылка", href: "#", isExternal: true})(aria-label="Просто ссылка").btn--red
+          pre +btn({text: "Текст", href: "#", isExternal: true})(aria-label="Просто ссылка").btn--red
         +btn({text: "Текст"})(disabled)
         p Пример вызова
         code
           pre +btn({text: "Текст"})(disabled)
 
+      section(id="socials")
+        h2.ui-tile Socials
+        p socials - это БЭМ блок, который используется для создания списков социальных сетей. Что бы сделать ссылки доступными мы НЕ ИСПОЛЬЗУЕМ span.visually-hidden с вложенным в него текстовым описанием, мы используем aria-label.
+        .socials
+          ul.socials__list
+            li.socials__item
+              a.socials__link(href="#", aria-label="Мы вконтакте")
+                +icon("img/sprite_auto.svg#icon-vk", 21, 21)
+            li.socials__item
+              a.socials__link(href="#", aria-label="Мы вконтакте")
+                +icon("img/sprite_auto.svg#icon-vk", 21, 21)
+            li.socials__item
+              a.socials__link(href="#", aria-label="Мы вконтакте")
+                +icon("img/sprite_auto.svg#icon-vk", 21, 21)
+
+      section(id="pagination")
+        h2.ui-tile Pagination
+        p pagination - это БЭМ блок, который используется для создания пагинации. Список ссылок на страницы и контролы разделены, это не лжин список! В списоке ссылок, выбранный элемент сделан тегом span, а не ссылкой, на элементе висит модификатор pagination__link--current. Ссылкам обязательно прописывать aria-label так как номера страниц не информативны.
+        .pagination
+          .pagination__control-block
+            a.pagination__control(href="#", aria-label="Переход назад") Назад
+          ul.pagination__list
+            li.pagination__item
+              span.pagination__link.pagination__link--current 1
+            li.pagination__item
+              a.pagination__link(href="#", aria-label="Переход на страницу 2") 2
+            li.pagination__item
+              a.pagination__link(href="#", aria-label="Переход на страницу 3") 3
+            li.pagination__item
+              a.pagination__link(href="#", aria-label="Переход на страницу 4") 4
+            li.pagination__item
+              a.pagination__link(href="#", aria-label="Переход на страницу 5") 5
+          .pagination__control-block
+            a.pagination__control(href="#", aria-label="Переход вперёд") Вперёд
+
+      section(id="breadcrumbs")
+        h2.ui-tile Breadcrumbs
+        p breadcrumbs - это БЭМ блок, который используется для создания "хлебных крошек". .breadcrumbs__list - это список, в последнем элементе списка, если это текущая страница, вставлен span, а не ссылка, на элементе висит модификатор breadcrumbs__link--current.
+        .breadcrumbs
+          ul.breadcrumbs__list
+            li.breadcrumbs__item
+              a.breadcrumbs__link(href="#") Главная
+            li.breadcrumbs__item
+              a.breadcrumbs__link(href="#") Новости
+            li.breadcrumbs__item
+              span.breadcrumbs__link.breadcrumbs__link--current Новость
+
+      section(id="lists")
+        h2.ui-tile Lists
+        p list - это БЭМ блок, который используется для создания списков. Для создания нумированных списков используем ol, ненумерованных ul это важно несмотря на то что мы обнуляем стили списков. В простых списках где нет сложной вложенности, текст вкладывается прямо в li, на li не вешается класс, всё стилизуется от родителя.
+        p list--numeric - это модификатор для нумерованных списков. Для передачи кастомных значений в нумерацию можно использовать data атрибуты. Например на li повесить data-num="кастомное значение", а для псевдоэлемента в css прописать content: attr(data-num);
+        ol.list.list--numeric
+          li Lorem ipsum dolor sit amet consectetur, adipisicing elit. Porro excepturi exercitationem libero velit? Nemo eius, sapiente, ea consequuntur est quas nesciunt alias non consectetur aperiam ipsa quis molestias obcaecati sed?
+          li Lorem ipsum dolor sit amet consectetur, adipisicing elit. Porro excepturi exercitationem libero velit? Nemo eius, sapiente, ea consequuntur est quas nesciunt alias non consectetur aperiam ipsa quis molestias obcaecati sed?
+          li Lorem ipsum dolor sit amet consectetur, adipisicing elit. Porro excepturi exercitationem libero velit? Nemo eius, sapiente, ea consequuntur est quas nesciunt alias non consectetur aperiam ipsa quis molestias obcaecati sed?
+          li Lorem ipsum dolor sit amet consectetur, adipisicing elit. Porro excepturi exercitationem libero velit? Nemo eius, sapiente, ea consequuntur est quas nesciunt alias non consectetur aperiam ipsa quis molestias obcaecati sed?
+        p list--circle и так далее - это модификатор для кастомизации булетов списков.
+        ul.list.list--circle
+          li Lorem ipsum dolor sit amet consectetur, adipisicing elit. Porro excepturi exercitationem libero velit? Nemo eius, sapiente, ea consequuntur est quas nesciunt alias non consectetur aperiam ipsa quis molestias obcaecati sed?
+          li Lorem ipsum dolor sit amet consectetur, adipisicing elit. Porro excepturi exercitationem libero velit? Nemo eius, sapiente, ea consequuntur est quas nesciunt alias non consectetur aperiam ipsa quis molestias obcaecati sed?
+          li Lorem ipsum dolor sit amet consectetur, adipisicing elit. Porro excepturi exercitationem libero velit? Nemo eius, sapiente, ea consequuntur est quas nesciunt alias non consectetur aperiam ipsa quis molestias obcaecati sed?
+          li Lorem ipsum dolor sit amet consectetur, adipisicing elit. Porro excepturi exercitationem libero velit? Nemo eius, sapiente, ea consequuntur est quas nesciunt alias non consectetur aperiam ipsa quis molestias obcaecati sed?
+        p list--red и так далее - это модификатор для кастомизации цветов булетов или номеров пунктов списков.
+        ul.list.list--circle.list--red
+          li Lorem ipsum dolor sit amet consectetur, adipisicing elit. Porro excepturi exercitationem libero velit? Nemo eius, sapiente, ea consequuntur est quas nesciunt alias non consectetur aperiam ipsa quis molestias obcaecati sed?
+          li Lorem ipsum dolor sit amet consectetur, adipisicing elit. Porro excepturi exercitationem libero velit? Nemo eius, sapiente, ea consequuntur est quas nesciunt alias non consectetur aperiam ipsa quis molestias obcaecati sed?
+          li Lorem ipsum dolor sit amet consectetur, adipisicing elit. Porro excepturi exercitationem libero velit? Nemo eius, sapiente, ea consequuntur est quas nesciunt alias non consectetur aperiam ipsa quis molestias obcaecati sed?
+          li Lorem ipsum dolor sit amet consectetur, adipisicing elit. Porro excepturi exercitationem libero velit? Nemo eius, sapiente, ea consequuntur est quas nesciunt alias non consectetur aperiam ipsa quis molestias obcaecati sed?
+
+      section(id="dropdown")
+        h2.ui-tile Dropdown
+        p Простое выпадающее меню на чистом html и css. Для доступности с клавиатуры используется псевдо-класс :focus-within
+        .dropdown(tabindex="0")
+          span.dropdown__button Меню
+          ul.dropdown__list
+            li.dropdown__item
+              a.dropdown__link(href="index.html") Главная страница
+            li.dropdown__item
+              a.dropdown__link(href="sitemap.html") Разводящая страница
+            li.dropdown__item
+              a.dropdown__link(href="ui-kit.html") UI-kit
+
+      section(id="cards")
+        h2.ui-tile Cards
+        p При построении сеток карточек товаров мы используем grid
+        section.cards
+          .container
+            h2.cards__title Карточки товаров в три колонки
+            ul.cards__list
+              li.cards__item
+                +card()
+              li.cards__item
+                +card()
+              li.cards__item
+                +card()
+            h2.cards__title Карточки товаров в две колонки
+            ul.cards__list.cards__list--two-columns
+              li.cards__item
+                +card()
+              li.cards__item
+                +card()
+
+      section(id="cards-hover")
+        h2.ui-tile Cards hover
+        p Если по наведению на карточку должна появляться дополнительная информация, то мы не должны забывать о доступности и с клавиатуры, для этого используется псевдо-класс :focus-within
+        section.cards
+          .container
+            h2.cards__title Карточки товаров с показом дополнительного контента
+            ul.cards__list
+              li.cards__item
+                +card-hover()
+              li.cards__item
+                +card-hover()
+              li.cards__item
+                +card-hover()
+
       section(id="form-elements")
-        h2 Form elements
+        h2.ui-tile Form elements
         div(data-validate)
           form(method="post")
             +custom-input({inputLabel: "Введите ваше имя", inputError: "Не корректное имя", inputName: "user-name", inputMinLength: "2"})(data-validate-type="text", data-limitations="name")
@@ -176,6 +305,12 @@ block main
               pre +custom-toggle({inputLabel: "Подтвердите своё согласие", inputError: "Согласие является обязательным", inputName: "user-agreement", inputChecked: true})(data-validate-type="checkbox").custom-toggle--checkbox
             +btn({text: "Сбросить форму", type: "reset"})
             +btn({text: "Отправить форму", type: "submit"})
+      section(id="modals")
+        h2.ui-tile Modals
+        p
+          +btn({text: "modal-feedback"})(data-open-modal="feedback")
+        p
+          +btn({text: "modal-success"})(data-open-modal="success")
 
   script
     include ../../js/inline/ui-kit.js

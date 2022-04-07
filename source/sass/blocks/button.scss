@@ -1,4 +1,4 @@
-.btn {
+.button {
   display: inline-flex;
   margin: 10px 0;
   padding: 10px 20px;
@@ -10,6 +10,16 @@
   cursor: pointer;
 
   transition: opacity $trans-default;
+
+  &--small {
+    font-size: 14px;
+    padding: 5px 10px;
+  }
+
+  &--big {
+    font-size: 24px;
+    padding: 20px 30px;
+  }
 
   &--red {
     background-color: $color-torch-red;

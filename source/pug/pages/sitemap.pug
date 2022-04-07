@@ -58,11 +58,22 @@ block main
         name: "Главная — index.html",
         src: "index.html"
       },
+      {
+        name: "Изменямость контента — changeability.html",
+        src: "changeability.html"
+      },
+      {
+        name: "Изменямость контента, задания — changeability-broken.html",
+        src: "changeability-broken.html"
+      },
+      {
+        name: "Изменямость контента, обьяснения — changeability-explaining.html",
+        src: "changeability-explaining.html"
+      },
     ]
 
   main
     .container
-      img(src="https://via.placeholder.com/300x150" width="300" alt="Логотип проекта")
       h1 Список страниц
       ol
         each page in pages

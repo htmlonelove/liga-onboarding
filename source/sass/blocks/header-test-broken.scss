@@ -1,0 +1,17 @@
+.header-test-broken {
+  padding: 28px 0;
+
+  &__wrapper {
+    display: flex;
+    align-items: center;
+  }
+
+  &__logo {
+    display: flex;
+    color: $color-default-black;
+  }
+
+  &__contacts {
+    margin: 0 auto;
+  }
+}

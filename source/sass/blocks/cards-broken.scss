@@ -1,0 +1,19 @@
+.cards-broken {
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+    justify-content: space-between;
+  }
+
+  &__item {
+    width: 30%;
+  }
+
+  & .card-broken {
+    width: 100%;
+  }
+}

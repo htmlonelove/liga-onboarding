@@ -1,0 +1,19 @@
+mixin card()
+  .card
+    .card__img
+      .card__img-wrapper
+        +img("content", "card-img", "jpg", 250, 200, "Сердце.")
+    .card__content
+      a(href="#")
+        h3.card__title Заголовок карточки
+      p.card__description Описание карточки
+      dl.card__description-list
+        .card__description-item
+          dt.card__description-term Запах:
+          dd.card__description-definition Апельсин
+        .card__description-item
+          dt.card__description-term Вкус:
+          dd.card__description-definition Картошка
+        .card__description-item
+          dt.card__description-term Размер:
+          dd.card__description-definition XXl

@@ -1,0 +1,20 @@
+.section {
+  padding: 40px 0;
+
+  &__title {
+    margin: 0 0 40px 0;
+
+    font-size: 60px;
+    line-height: 100%;
+    font-family: $ff-neue-machina;
+  }
+
+  .cards-broken,
+  .cards {
+    margin: 0 0 40px 0;
+
+    &:last-child {
+      margin: 0;
+    }
+  }
+}

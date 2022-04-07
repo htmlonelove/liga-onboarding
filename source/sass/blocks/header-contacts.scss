@@ -1,0 +1,17 @@
+.header-contacts {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -20px -20px 0;
+
+  &__link {
+    margin: 0 20px 20px 0;
+    transition: opacity $trans-default;
+
+    @media (hover: hover), screen and (min-width: 0\0) {
+      &:hover,
+      &:focus {
+        opacity: 0.6;
+      }
+    }
+  }
+}

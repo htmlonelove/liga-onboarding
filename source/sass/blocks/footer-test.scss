@@ -1,0 +1,29 @@
+.footer-test {
+  border-top: 1px solid $color-neon-blue;
+  padding: 40px 0;
+
+  &__wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 40px;
+  }
+
+  &__link-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+
+    justify-content: center;
+  }
+
+  &__link-item {
+    margin: 0 30px 10px 0;
+  }
+
+  &__logo {
+    display: flex;
+    justify-content: end;
+  }
+}

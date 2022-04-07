@@ -1,0 +1,21 @@
+.cards {
+  &__list {
+    display: grid;
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+
+    gap: 80px;
+    grid-template-columns: repeat(3, 1fr);
+
+    &--two-columns {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  & .card {
+    width: 100%;
+    height: 100%;
+  }
+}

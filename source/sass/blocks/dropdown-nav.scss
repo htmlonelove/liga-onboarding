@@ -1,0 +1,106 @@
+.dropdown-nav {
+  width: 250px;
+  position: relative;
+  transform: translateZ(0);
+
+  &:focus-within {
+    .dropdown-nav__list {
+      visibility: visible;
+      opacity: 1;
+    }
+
+    .dropdown-nav__button {
+      &::before {
+        transform: translateY(-50%) rotate(-180deg);
+      }
+    }
+  }
+
+  &:hover {
+    .dropdown-nav__list {
+      visibility: visible;
+      opacity: 1;
+    }
+
+    .dropdown-nav__button {
+      &::before {
+        transform: translateY(-50%) rotate(-180deg);
+      }
+    }
+  }
+
+  &__button {
+    position: relative;
+    border: 1px solid $color-default-white;
+    color: $color-default-white;
+    width: 100%;
+    min-height: 46px;
+    display: block;
+    padding: 10px 30px 10px 10px;
+    width: 100%;
+    text-align: left;
+    cursor: pointer;
+
+    &::before {
+      content: "";
+      position: absolute;
+      right: 10px;
+      top: 50%;
+      width: 15px;
+      height: 8px;
+      margin-left: auto;
+
+      background-color: $color-default-white;
+
+      transition: transform $trans-default;
+      transform: translateY(-50%);
+
+      clip-path: polygon(100% 0, 100% 20%, 50% 100%, 0 20%, 0 0, 50% 80%);
+    }
+  }
+
+  &__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    background-color: $color-default-white;
+    position: absolute;
+    width: 100%;
+    box-shadow: 0 0 3px 0 $color-neon-blue;
+    height: 210px;
+    overflow-y: auto;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility $trans-default, opacity $trans-default;
+  }
+
+  &__item {
+    display: flex;
+    border-bottom: 1px solid $color-neon-blue;
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+
+  &__link {
+    color: $color-default-black;
+    width: 100%;
+    transition: color 0.3s ease;
+    padding: 5px 10px;
+  }
+
+  &__link:hover,
+  &__link.is-active {
+    color: #ff1553;
+  }
+
+  &__link.is-active {
+    pointer-events: none;
+  }
+
+  &__link.is-inactive {
+    color: #ffffff;
+    pointer-events: none;
+  }
+}

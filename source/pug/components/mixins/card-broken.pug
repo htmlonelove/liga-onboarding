@@ -1,0 +1,18 @@
+mixin card-broken()
+  .card-broken
+    .card-broken__img
+      +img("content", "card-img", "jpg", 250, 200, "Сердце.")
+    .card-broken__content
+      a(href="#")
+        h3.card-broken__title Заголовок карточки
+      p.card-broken__description Описание карточки
+      dl.card-broken__description-list
+        .card-broken__description-item
+          dt.card-broken__description-term Запах:
+          dd.card-broken__description-definition Апельсин
+        .card-broken__description-item
+          dt.card-broken__description-term Вкус:
+          dd.card-broken__description-definition Картошка
+        .card-broken__description-item
+          dt.card-broken__description-term Размер:
+          dd.card-broken__description-definition XXl

@@ -1,0 +1,32 @@
+.text-block-broken {
+  margin: 0 0 40px 0;
+
+  &__title {
+    margin: 0 0 20px 0;
+
+    font-size: 40px;
+    line-height: 100%;
+  }
+
+  &__text {
+    position: relative;
+    margin: 0;
+
+    padding-right: 20%;
+
+    font-size: 24px;
+    line-height: 100%;
+  }
+
+  &--chess {
+    .text-block-broken__text {
+      margin: 0;
+
+      &:nth-child(3) {
+        padding-right: 0;
+        padding-left: 20%;
+        margin: 40px 0;
+      }
+    }
+  }
+}

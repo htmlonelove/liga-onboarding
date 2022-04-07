@@ -1,0 +1,21 @@
+.footer-test-broken {
+  border-top: 1px solid $color-neon-blue;
+  padding: 40px 0;
+
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__link-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &__link-item {
+    margin: 0 30px 10px 0;
+  }
+}

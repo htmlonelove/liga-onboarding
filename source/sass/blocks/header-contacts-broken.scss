@@ -1,0 +1,15 @@
+.header-contacts-broken {
+  display: flex;
+
+  &__link {
+    margin: 0 20px 0 0;
+    transition: opacity $trans-default;
+
+    @media (hover: hover), screen and (min-width: 0\0) {
+      &:hover,
+      &:focus {
+        opacity: 0.6;
+      }
+    }
+  }
+}

@@ -1,0 +1,56 @@
+.greeting {
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+  justify-content: center;
+  padding: 10vh 0;
+
+  &__wrapper {
+    margin-bottom: 40px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    .greeting__text {
+      margin: 0 0 40px 0;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &__title {
+    margin: 0 0 40px 0;
+
+    font-size: 60px;
+    line-height: 100%;
+    font-family: $ff-neue-machina;
+    text-align: center;
+  }
+
+  &__text {
+    position: relative;
+
+    margin: 0 0 40px 0;
+    padding-right: 20%;
+
+    font-size: 24px;
+    line-height: 100%;
+
+    &--right {
+      padding-right: 0;
+      padding-left: 20%;
+    }
+  }
+
+  &__wrapper--chess {
+    .greeting__text {
+      &:nth-child(odd) {
+        padding-right: 0;
+        padding-left: 20%;
+      }
+    }
+  }
+}

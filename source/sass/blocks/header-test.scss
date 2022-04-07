@@ -1,0 +1,22 @@
+.header-test {
+  padding: 28px 0;
+
+  &__wrapper {
+    display: grid;
+    grid-template-columns: max-content 1fr max-content;
+    gap: 40px;
+    align-items: center;
+    justify-items: center;
+  }
+
+  &__logo {
+    margin-right: auto;
+    display: flex;
+    color: $color-default-black;
+  }
+
+  &__dropdown {
+    margin-left: auto;
+    align-self: center;
+  }
+}
